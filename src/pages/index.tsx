@@ -17,7 +17,6 @@ export default function LandingPage() {
     return fetchedData;
   }, [fetchedData, useFakeData]);
 
-  if (status === ComponentStatus.error) return <ErrorPage error={error} />;
   if (status === ComponentStatus.fetching) return <Spinner title={"Loading stocks data"} />;
 
   return (
@@ -29,7 +28,13 @@ export default function LandingPage() {
           <span>Use fake data</span>
         </div>
       </div>
-      {data ? <HighchartsStocks data={data} /> : "No data available"}
+      {data ? (
+        <HighchartsStocks data={data} />
+      ) : error ? (
+        <ErrorPage error={error} />
+      ) : (
+        <>"No data available"</>
+      )}
     </div>
   );
 }
