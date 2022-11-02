@@ -1,0 +1,17 @@
+export enum StockItems {
+  open = "open",
+  high = "high",
+  low = "low",
+  close = "close",
+  volume = "volume",
+  adj_high = "adj_high",
+  adj_low = "adj_low",
+  adj_open = "adj_open",
+  adj_close = "adj_close",
+  adj_volume = "adj_volume",
+  split_factor = "split_factor",
+  dividend = "dividend",
+  symbol = "symbol",
+  exchange = "exchange",
+  date = "date",
+}
